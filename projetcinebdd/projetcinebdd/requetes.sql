@@ -14,7 +14,6 @@ ORDER BY titre;
 SELECT pays_ID, 
 COUNT(*) AS nb_series 
 FROM series 
-GROUP BY pays_ID;
 --Combien de séries ont été créés entre 2001 et 2015?
 SELECT COUNT(*) AS nb_series 
 FROM series
@@ -71,7 +70,6 @@ GROUP BY s.titre
 HAVING AVG(n.valeurnote) < 5
 ORDER BY moyenne_note;
 --Pour chaque série, afficher le commentaire correspondant à la meilleure note.
-CREATE VIEW meilleureCommentaire AS
 SELECT s.titre, n.type
 FROM series s
 JOIN episodes e ON s.serieID = e.serieID
@@ -147,7 +145,6 @@ WHERE NOT EXISTS (
     )
 );
 --Les messages initiés par « Azrod95 » génèrent combien de réponses en moyenne ?
-CREATE VIEW azrod AS
 SELECT AVG(nombre_reponses) AS messageAzrod
 FROM (
     SELECT COUNT(uf.ForumID) AS nombre_reponses
