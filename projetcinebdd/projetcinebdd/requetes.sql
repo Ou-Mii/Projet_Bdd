@@ -4,8 +4,6 @@ SELECT *
 --Combien de pays différents ont créé des séries dans notre base ?.
 SELECT COUNT(DISTINCT pays_ID) AS nb_pays 
 FROM series;
-COUNT(*) AS nb_series 
-FROM series 
 GROUP BY pays_ID;
 --Quels sont les titres des séries originaires du Japon, triés par titre ?
 SELECT titre
