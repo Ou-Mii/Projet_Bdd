@@ -4,7 +4,7 @@ SELECT *
 --Combien de pays différents ont créé des séries dans notre base ?.
 SELECT COUNT(DISTINCT pays_ID) AS nb_pays 
 FROM series;
-GROUP BY pays_ID;
+
 --Quels sont les titres des séries originaires du Japon, triés par titre ?
 SELECT titre
 FROM series
@@ -14,6 +14,8 @@ ORDER BY titre;
 SELECT pays_ID, 
 COUNT(*) AS nb_series 
 FROM series 
+GROUP BY pays_ID
+
 --Combien de séries ont été créés entre 2001 et 2015?
 SELECT COUNT(*) AS nb_series 
 FROM series
@@ -154,7 +156,6 @@ FROM (
     WHERE u.pseudo = 'Azrod95'
     GROUP BY f.ForumID
 ) AS sous_requete;
-
 
 
 
